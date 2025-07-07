@@ -1,0 +1,94 @@
+POST http://localhost:5000/api/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmI1ZWM1ZGNmZDFjYTE4OTcwMWY3YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTg2NzA4N30.JI-6XYjXGX--r-MFBOoRbxHwEqRmI1EPF7jrApeY9JQ
+Content-Type: application/json
+
+{
+  "name": "Keyboard",
+  "description": "Bluetooth mouse with ergonomic grip",
+  "price": 799,
+  "category": "electronics"
+}
+
+
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "adminuser",
+  "password": "admin123"
+}
+
+
+###
+GET http://localhost:5000/api/products
+
+
+###
+POST http://localhost:5000/api/cart
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmI1ZWM1ZGNmZDFjYTE4OTcwMWY3YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTg2NzA4N30.JI-6XYjXGX--r-MFBOoRbxHwEqRmI1EPF7jrApeY9JQ
+Content-Type: application/json
+
+{
+    "productId":"686b5edcdcfd1ca189701f7f",
+    "quantity":5
+}
+
+
+###
+GET http://localhost:5000/api/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmI1ZWM1ZGNmZDFjYTE4OTcwMWY3YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTg2NzA4N30.JI-6XYjXGX--r-MFBOoRbxHwEqRmI1EPF7jrApeY9JQ
+Content-Type: application/json
+
+
+###
+
+DELETE http://localhost:5000/api/products/:686b5edcdcfd1ca189701f7f
+
+
+###Register Admin
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "Salman",
+  "password": "Salman@123",
+  "role": "admin"
+}
+
+### Register Customer
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "Customer1",
+  "password": "customer123",
+  "role": "customer"
+}
+
+### Admin Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "Salman",
+  "password": "Salman@123"
+}
+
+###
+GET http://localhost:5000/api/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmI1ZWM1ZGNmZDFjYTE4OTcwMWY3YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTg2NzY3MH0.tsT0Lvnk3Kgg9SBTPtIN1_rUFIRB3hbGHbQfqTX8Gq4
+
+###
+POST http://localhost:5000/api/cart/686b5f8cdcfd1ca189701f84
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmI1ZWM1ZGNmZDFjYTE4OTcwMWY3YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTg2NzY3MH0.tsT0Lvnk3Kgg9SBTPtIN1_rUFIRB3hbGHbQfqTX8Gq4
+Content-Type: application/json
+
+{
+    "quantity": 10
+}
+
+###
+GET http://localhost:5000/api/admin/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NmI2MGQxZGNmZDFjYTE4OTcwMWY5MCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MTg2ODYxM30.LiWhYO0ODKdH9riwrom6mhUFis4ErebQfdSZTnSIEJk
